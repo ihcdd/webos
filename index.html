@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ОС 95 - Ретро Web OS</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="desktop">
+  <div id="start-menu-button">Пуск</div>
+  <div id="start-menu" class="hidden">
+    <ul>
+      <li id="open-notepad">Блокнот</li>
+      <li id="open-settings">Настройки</li>
+      <li id="logout">Завершить сеанс</li>
+      <li id="shutdown">Выключить</li>
+    </ul>
+  </div>
+  <div id="icons">
+    <div class="icon" id="icon-notepad">Блокнот</div>
+    <div class="icon" id="icon-settings">Настройки</div>
+    <div class="icon" id="icon-terminal">Терминал</div>
+  </div>
+</div>
+
+<!-- Окно Блокнота -->
+<div id="notepad-window" class="window hidden">
+  <div class="title-bar">
+    <span>Блокнот</span>
+    <button class="close-window" data-window="notepad-window">×</button>
+  </div>
+  <div class="window-content">
+    <textarea id="notepad-text" spellcheck="false"></textarea>
+    <div class="notepad-controls">
+      <button id="color-btn">Цвет</button>
+      <button id="clear-btn">Очистить</button>
+      <button id="save-btn">Сохранить</button>
+      <button id="import-btn">Импорт TXT</button>
+      <button id="export-btn">Экспорт TXT</button>
+      <button id="cursor-style-btn">Курсор: ▌</button>
+      <button id="bg-style-btn">Фон: Сканлайн</button>
+      <input type="file" id="file-input" accept=".txt" style="display:none" />
+    </div>
+  </div>
+</div>
+
+<!-- Окно Настроек -->
+<div id="settings-window" class="window hidden">
+  <div class="title-bar">
+    <span>Настройки</span>
+    <button class="close-window" data-window="settings-window">×</button>
+  </div>
+  <div class="window-content">
+    <label><input type="checkbox" id="dark-mode-toggle" checked /> Тёмная тема</label>
+  </div>
+</div>
+
+<!-- Окно Терминала -->
+<div id="terminal-window" class="window hidden">
+  <div class="title-bar">
+    <span>Терминал</span>
+    <button class="close-window" data-window="terminal-window">×</button>
+  </div>
+  <div class="window-content">
+    <pre id="terminal-output"></pre>
+    <input type="text" id="terminal-input" autocomplete="off" autofocus />
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
